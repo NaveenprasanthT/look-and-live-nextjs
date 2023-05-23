@@ -1,0 +1,89 @@
+.headerWrap {
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    font-size: 16px;
+    font-weight: 400;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+
+}
+
+.logo {
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+}
+.link li {
+    text-decoration: none;
+    color: #000;
+}
+
+.navItem {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    text-decoration: none;
+}
+
+.navItem li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: max-content;
+    border: 2px solid transparent;
+    border-left: none;
+    border-right: none;
+}
+
+.navItem li:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    border-left: none;
+    border-right: none;
+}
+
+.getInTouch {
+    min-width: max-content;
+    padding: 6px 20px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background: transparent;
+    color: #000;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.getInTouch:hover {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.mobileView {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    .headerWrap {
+        display: none;
+    }
+
+    .mobileView {
+        display: block;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+    }
+}

@@ -1,0 +1,171 @@
+.downloadWrap {
+    width: 30%;
+    min-width: 300px;
+    height: 60vh;
+    position: fixed;
+    top: 15%;
+    left: 30%;
+    background: #fff;
+    padding: 3%;
+    padding-top: 1%;
+    color: #000;
+    z-index: 999;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+}
+
+.close {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.Downloadform {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Downloadform input {
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid gray;
+    margin-top: 10px;
+}
+
+.Downloadform input:focus {
+    /* border: 1px #00000065 solid; */
+    outline: none;
+}
+
+.downloadBtn input[type=submit] {
+    font-family: "Brandon_med";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-image: linear-gradient(to right, black, white) 1;
+    background: none;
+    height: 40px;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    transition: ease-in 0.3s;
+    margin: 0;
+    margin-top: 10%;
+    width: max-content;
+}
+
+.downloadBtn input[type=submit]:hover {
+    background-color: #CDAF4C;
+    border-image: linear-gradient(to right, white, black) 1;
+
+}
+
+.DownloadPolicy {
+    font-size: 14px;
+    text-align: center;
+}
+
+.pop-up-privacy-policy {
+    font-size: 20px;
+    text-align: center;
+    font-family: "Brandon_reg";
+    margin-top: 10%;
+}
+
+.QuizeWrap {
+    text-align: center;
+}
+
+.thanksText {
+    margin-top: 4%;
+    padding: 0 10%;
+}
+
+.downloadAgain {
+    margin-top: 4%;
+    padding: 0 10%;
+}
+
+.msg {
+    margin-top: 4%;
+}
+
+.quizBtn button {
+    margin-top: 10px;
+    padding: 3% 6%;  
+}
+
+
+
+/* OTP */
+.sendOtpWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    /* width: 70%; */
+}
+
+.input {
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid gray;
+    margin-top: 10px;
+}
+
+.inputError {
+    width: 70%;
+    height: 35px;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: 1px solid rgb(184, 0, 0);
+    margin-top: 10px;
+}
+
+.inputError:focus {
+    outline: rgb(184, 0, 0);
+}
+
+.sendOtpWrap button {
+   margin-top: 4%;
+   padding: 2% 6%;
+}
+
+.sendOtpWrap button:hover {
+    cursor: pointer;
+    background: #CDAF4C;
+    border-image: linear-gradient(to right, black, white ) 1;
+    color: #fff;
+}
+
+.alertActive {
+    margin-top: 2%;
+    color: rgb(184, 0, 0);
+    font-size: 10px;
+}
+
+.alertInactive {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .downloadWrap {
+        left: 15vw;
+        min-width: 70vw;
+    }
+}

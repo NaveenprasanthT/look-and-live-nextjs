@@ -1,0 +1,58 @@
+.sectionWrap {
+    padding-right: 6%;
+}
+
+.cardWrap {
+    display: flex;
+    height: 600px;
+}
+
+.imageWrap {
+    width: 30%;
+}
+
+.contentWrap {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.title {
+    text-align: right;
+    font-weight: 380;
+    font-size: 24px;
+    margin-bottom: 6%;
+}
+
+.contentWrap h1 {
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 74px;
+    width: min-content;
+    margin: 0;
+    margin-bottom: 1%;
+}
+
+.contentWrap h4 {
+    font-weight: 390;
+    font-size: 16px;
+    color: var(--primary-color);
+    margin: 0;
+}
+.icons{
+    display: flex;
+    gap: 10px;
+    margin: 2% 0;
+}
+.review{
+    margin-top: 2%;
+    width: 70%;
+}

@@ -1,0 +1,42 @@
+.sectionWrap {
+    background: #fff;
+    padding: 4% 6%;
+
+}
+
+.title {
+    color: #000;
+    font-weight: 420;
+    font-size: 48px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 15px;
+}
+
+.card {
+    width: 250px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image {
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+}
+.content{
+    background: var(--primary-color);
+    color: #000;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 10%;
+}

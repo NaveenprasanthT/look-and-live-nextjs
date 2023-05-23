@@ -1,0 +1,59 @@
+.footerWrap {
+    padding: 4% 2%;
+    background: #fff;
+}
+
+.main {
+    display: flex;
+    align-items: flex-start;
+}
+
+.logoWrap {
+    width: 25%;
+}
+
+.logo {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    padding-top: 6%;
+}
+
+.link {
+    text-decoration: none;
+    color: #000;
+}
+
+.navItem {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    padding: 0;
+    text-decoration: none;
+}
+
+.navItem li {
+    color: #000;
+    list-style: none;
+    text-decoration: none;
+}
+
+.content {
+    width: 25%;
+}
+
+.content h1 {
+    color: #000;
+    font-weight: 420;
+    font-size: 48px;
+    margin: 2% 0;
+}
+
+.content p {
+    color: #000;
+    margin: 0;
+    line-height: 180%;
+    width: 70%;
+}

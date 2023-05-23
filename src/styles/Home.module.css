@@ -1,0 +1,7 @@
+/* index */
+.bigFont {
+    font-size: 24px;
+}
+.highlight{
+    color: var(--primary-color)
+}

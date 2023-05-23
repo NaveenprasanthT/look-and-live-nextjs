@@ -1,0 +1,48 @@
+.SectionWrap {
+    padding: 2% 6%;
+}
+
+.title {
+    font-weight: 420;
+    font-size: 48px;
+}
+
+.row1,
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    margin: 4% 0;
+}
+
+.iconWrap {
+    display: flex;
+}
+
+.contentWrap {
+    margin-left: 10%;
+    width: max-content;
+}
+
+.number {
+    font-weight: 420;
+    font-size: 32px;
+}
+
+.text {
+    width: max-content;
+}
+
+.warranty {
+    background-image: url('/Assets/icons/bg_pattern.png');
+    /* opacity: ; */
+    object-fit: cover;
+}
+
+.content ul {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 150%;
+    margin-bottom: 4%;
+}
