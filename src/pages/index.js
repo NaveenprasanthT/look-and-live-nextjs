@@ -10,12 +10,16 @@ import HowItWorks from '@/Components/Home/HowItWorks'
 import Partners from '@/Components/Home/Partners'
 import Testimonials from '@/Components/Home/Testimonials'
 import DownloadPopup from '@/Components/DownloadPopup'
-import { DownloadContext } from '@/Context'
+import { BookingContext, DownloadContext } from '@/Context'
 import { useContext } from 'react'
+import Navbar from '../Components/Navbar/Navbar'
+import Footer from '@/Components/Footer'
+import Booking from '@/Components/Booking'
 
 
 export default function Home() {
   const { downloadPop } = useContext(DownloadContext);
+  const { booking } = useContext(BookingContext);
   return (
     <>
       <Head>
@@ -25,6 +29,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
+        <Navbar />
         <HeroSection />
         <Index {...aboutUs} />
         <WhyUs />
@@ -36,7 +41,9 @@ export default function Home() {
         <Index {...download} />
         <Partners />
         <Testimonials />
+        <Footer />
         {downloadPop ? <DownloadPopup /> : ''}
+        {booking ? <Booking /> : ''}
       </>
     </>
   )

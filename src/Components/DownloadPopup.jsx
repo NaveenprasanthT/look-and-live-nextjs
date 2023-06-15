@@ -3,13 +3,13 @@ import styles from '@/styles/DownloadPopup.module.css'
 import { GrClose } from 'react-icons/gr'
 import { DownloadContext } from '../Context'
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import db from '../FirebaseConfig'
 import Button from './Button';
+import { useRouter } from 'next/router';
 
 
 const DownloadPopup = () => {
   const { setDownloadPop } = useContext(DownloadContext);
-  const [active, setActive] = useState("Quiz")
+  const [active, setActive] = useState("thank ")
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phoneno, setPhoneno] = useState('')
@@ -17,9 +17,10 @@ const DownloadPopup = () => {
   const [otp, setotp] = useState('')
   const [invalidOtp, setinvalidOtp] = useState(false)
 
+  const router = useRouter()
 
 
-  const handleDeonloadBtn = (event) => {
+  const handleDownloadBtn = (event) => {
     event.preventDefault();
     setActive('OTP')
 
@@ -49,8 +50,7 @@ const DownloadPopup = () => {
   const handleVerification = () => {
     const code = otp;
     window.confirmationResult.confirm(code).then((result) => {
-      const user = result.user;
-      setActive("Quiz")
+      setActive("Thank you")
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
@@ -70,14 +70,14 @@ const DownloadPopup = () => {
         </div>
         <div className={styles.downloadAgain}>
           Your download should start
-          automatically, if not <span style={{color: 'var(--primary-)'}} >click here</span>.
+          automatically, if not <span style={{ color: 'var(--primary-)' }} >click here</span>.
         </div>
         <div className={styles.msg}>
           Please answer a few more questions to
           help us better understand your  interior
           requirement.
         </div>
-        <div className={styles.quizBtn}>
+        <div onClick={() => router.push('/Quiz')} className={styles.quizBtn}>
           <Button value='Customer Quiz' color='#000' />
         </div>
       </div>
@@ -100,7 +100,7 @@ const DownloadPopup = () => {
 
             // Info Form
             <div className={styles.form}>
-              <form action="" className={styles.Downloadform} onSubmit={handleDeonloadBtn} >
+              <form action="" className={styles.Downloadform} onSubmit={handleDownloadBtn} >
                 <input type="text" placeholder='Name*' value={name} required onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder='Email*' required value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input type="text" placeholder='Phone Number*' required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
@@ -121,7 +121,7 @@ const DownloadPopup = () => {
 
               <div className={styles.sendOtpWrap}>
                 <input className={invalidOtp ? styles.inputError : styles.input} autoFocus="autofocus" type="text" value={otp} onChange={(e) => { setotp(e.target.value) }} placeholder='Enter OTP' required />
-                <Button onClick={() => handleVerification} value='Verify' color='#000' small={true} />
+                <div onClick={handleVerification} ><Button value='Verify' color='#000' small={true} /></div>
                 <p className={invalidOtp ? styles.alertActive : styles.alertInactive}>Invalid OTP</p>
               </div>
 

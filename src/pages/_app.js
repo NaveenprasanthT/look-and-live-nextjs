@@ -1,6 +1,4 @@
 import '@/styles/globals.css'
-import Navbar from '../Components/Navbar/Navbar'
-import Footer from '@/Components/Footer'
 import { useState } from 'react'
 import { DownloadContext, QuizContext, BookingContext } from '../../src/Context'
 
@@ -11,6 +9,7 @@ export default function App({ Component, pageProps }) {
 
 
   //Quiz
+  const [currentQ, setCurrentQ] = useState(1)
   const [Q1, setQ1] = useState('')
   const [Q2, setQ2] = useState('')
   const [Q3, setQ3] = useState('')
@@ -51,12 +50,12 @@ export default function App({ Component, pageProps }) {
       <BookingContext.Provider value={{ booking, setBooking }}>
 
         <QuizContext.Provider value={{
-          Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13,
-          setQ1, setQ2, setQ3, setQ4, setQ5, setQ6, setQ7, setQ8, setQ9, setQ10, setQ11, setQ12, setQ13
+          currentQ, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13,
+          setCurrentQ, setQ1, setQ2, setQ3, setQ4, setQ5, setQ6, setQ7, setQ8, setQ9, setQ10, setQ11, setQ12, setQ13
         }}>
-          <Navbar />
+
           <Component {...pageProps} />
-          <Footer />
+
         </QuizContext.Provider>
       </BookingContext.Provider>
     </DownloadContext.Provider >

@@ -2,13 +2,13 @@ import React, { useState, useEffect, useContext } from 'react'
 import styles from '@/styles/HeroSection.module.css'
 import Image from 'next/image';
 import Button from '../Button';
-import { DownloadContext } from '@/Context';
+import { BookingContext, DownloadContext } from '@/Context';
 // import img from '../../../public/Assets/HomeSlider'
 
 
 const HeroSection = () => {
 
-    const { setDownloadPop } = useContext(DownloadContext);
+    const { setBooking } = useContext(BookingContext);
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -43,7 +43,9 @@ const HeroSection = () => {
                 <p style={{ color: 'var(--primary-color)' }} >ARCHITECTURE DESIGN</p>
                 <h1>Elevate your space with style.</h1>
                 <p>We enhance the appearance and overall ambiance of a living space by adding elements of style, design, and sophistication.</p>
-                <Button onClick={()=> setDownloadPop(true)} value='Book free consultation' color='#fff' />
+                <div onClick={()=> setBooking(true)}>
+                <Button value='Book free consultation' color='#fff' />
+                </div>
             </div>
         </div>
     )

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Left, MainSection, Right, SectionWrap, Title, ImageWrap, Img, Toptitle, EmiContent } from './IndexElement'
 import Button from '@/Components/Button'
+import {  DownloadContext } from '@/Context'
 
 
 
 const Index = ({ id, title, titleColor, topTitle, heading, content, subContent, btnValue, imageRight, imgUrl }) => {
+    const { setDownloadPop } = useContext(DownloadContext);
     return (
         <SectionWrap id={id} >
             <Toptitle topTitle={topTitle}>{title}</Toptitle>
@@ -28,7 +30,8 @@ const Index = ({ id, title, titleColor, topTitle, heading, content, subContent, 
                     {content}
                     {/* Sub Content h2 */}
                     {subContent}
-                    {btnValue != '' ? <Button value={btnValue} color={id==='download' ? '#000' : '#fff'} /> : ''}
+                    {btnValue != '' && id != 'download' ? <Button value={btnValue} color={id === 'download' ? '#000' : '#fff'} /> : ''}
+                    {btnValue != '' && id === 'download' ? <div onClick={() => setDownloadPop(true)} ><Button value={btnValue} color='#000' /></div> : ''}
                 </Right>
             </MainSection>
         </SectionWrap>
