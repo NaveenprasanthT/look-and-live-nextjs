@@ -40,3 +40,19 @@
     text-align: center;
     padding: 0 10%;
 }
+
+@media screen and (max-width: 750px) {
+    .sectionWrap {
+        padding: 6% 2%;
+    }
+    .title{
+        font-size: 32px;
+    }
+    .card {
+        width: 45%;
+        height: 180px;
+    }
+    .content{
+        font-size: 14px;
+    }
+}

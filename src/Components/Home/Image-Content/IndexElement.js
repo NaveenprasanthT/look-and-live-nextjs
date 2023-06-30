@@ -10,22 +10,37 @@ export const Toptitle = styled.div`
     font-weight: 420;
     font-size: 24px;
     display: ${({ topTitle }) => (topTitle ? 'block' : 'none')};
+    @media screen and (max-width: 1000px){
+        font-size: 22px;
+    }
 `;
 export const Title = styled.div`
     font-weight: 420;
     font-size: 24px;
     display: ${({ topTitle }) => (topTitle ? 'none' : 'block')};
+    @media screen and (max-width: 1000px){
+        font-size: 22px;
+        margin-top: 10px;
+    }
 `;
 export const MainSection = styled.div`
     display: flex;
     width: 100%;
     flex-direction: ${({imageRight}) => (imageRight ? ' row-reverse' : '')};
+    @media screen and (max-width: 1000px){
+        flex-direction: ${({imageRight}) => (imageRight ? ' column' : 'column')};
+        
+    }
 `;
 export const Left = styled.div`
     width: 60%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    @media screen and (max-width: 1000px){
+        width: 100%;
+        margin: 4% 0;
+    }
 `;
 
 export const ImageWrap = styled.div`
@@ -46,6 +61,10 @@ export const ImageWrap = styled.div`
 
     background-repeat: no-repeat;
     background-size: 50px 50px;
+    @media screen and (max-width: 1000px){
+        width: 100%;
+    }
+    
 `;
 export const Img = styled(Image)`
     width: 100%;
@@ -63,12 +82,17 @@ export const Right = styled.div`
         margin: 2% 0;
         color: ${({ titleColor }) => (titleColor)};
         font-size: 38px;
+        @media screen and (max-width: 1000px){
+        font-size: 26px;
+    }
     }
     h2{
         margin: 2% 0;
         color: ${({ titleColor }) => (titleColor)};
         font-size: 38px;
         display: ${({ id }) => (id === 'emi' ? 'none' : 'block')};
+       
+    
     }
     h6{
         margin: 0;
@@ -82,6 +106,12 @@ export const Right = styled.div`
         font-weight: 300;
         color: ${({id}) => (id==='download' ? '#000' : '')};
         display: ${({ id }) => (id === 'emi' ? 'none' : 'block')};
+        @media screen and (max-width: 1000px){
+        font-size: 18px;
+    }
+    }
+    @media screen and (max-width: 1000px){
+        width: 100%;
     }
 `;
 
@@ -110,6 +140,9 @@ export const EmiContent = styled.div`
         line-height: 160%;
         font-weight: 300;
         display: ${({ id }) => (id === 'emi' ? 'block' : 'none')};
+        @media screen and (max-width: 750px){
+        font-size: 12px;
+    }
     }
 `;
 

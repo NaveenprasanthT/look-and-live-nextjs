@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react'
 import styles from '@/styles/HeroSection.module.css'
 import Image from 'next/image';
 import Button from '../Button';
-import { BookingContext, DownloadContext } from '@/Context';
+import { BookingContext } from '@/Context';
 // import img from '../../../public/Assets/HomeSlider'
 
 

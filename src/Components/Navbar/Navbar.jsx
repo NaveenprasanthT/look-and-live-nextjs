@@ -35,16 +35,17 @@ const Header = () => {
                         <Image src={logo}
                             alt='logo'
                             height={50}
+                            style={{objectFit: 'contain'}}
                         />
                     </Link>
                 </div>
                 <ul className={styles.navItem}>
                     <Link href='/' className={styles.link}><li>Home</li></Link>
-                    <Link href='/AboutUs' className={styles.link}><li>About Us</li></Link>
-                    <Link href='/products' className={styles.link}><li>Products</li></Link>
+                    <Link href='/#about' className={styles.link}><li>About Us</li></Link>
+                    <Link href='/#services'  className={styles.link}><li>Services</li></Link>
                     <Link href='/#testimonials' className={styles.link}><li>Testimonials</li></Link>
                 </ul>
-                <Link href='/EnquiryForm'  >
+                <Link href='tel:+919844000873'  >
                     <Button value='Contact' color='#000' small={true} />
                 </Link>
 

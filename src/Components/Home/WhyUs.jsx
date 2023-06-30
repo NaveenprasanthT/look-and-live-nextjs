@@ -9,39 +9,39 @@ const WhyUs = () => {
         {
             number: '05+',
             text: 'Years Experience',
-            img: '/Assets/icons/choose1.png'
+            img: require('../../../public/Assets/icons/choose1.png'),
         },
         {
             number: '100+',
             text: 'Projects Delivered',
-            img: '/Assets/icons/choose2.png'
+            img: require('../../../public/Assets/icons/choose2.png'),
         },
         {
             number: '50+',
             text: 'Skilled interior designer',
-            img: '/Assets/icons/choose3.png'
+            img: require('../../../public/Assets/icons/choose3.png'),
         },
     ]
     const row2 = [
         {
             number: '05+',
             text: 'Years Experience',
-            img: '/Assets/icons/choose4.png'
+            img: require('../../../public/Assets/icons/choose4.png'),
         },
         {
             number: '100+',
             text: 'Projects Delivered',
-            img: '/Assets/icons/choose5.png'
+            img: require('../../../public/Assets/icons/choose5.png')
         },
         {
             number: '50+',
             text: 'Skilled interior designer',
-            img: '/Assets/icons/choose5.png'
+            img: require('../../../public/Assets/icons/choose5.png'),
         },
         {
             number: '50+',
             text: 'Skilled interior designer',
-            img: '/Assets/icons/choose7.png'
+            img: require('../../../public/Assets/icons/choose7.png')
         },
     ]
 
@@ -53,15 +53,15 @@ const WhyUs = () => {
                 <li>Maximize your investment with our 1-year on-site service warranty.</li>
             </ul>
         },
-        {
-            title: 'Technology & Science',
-            content: <ul>
-                <li>AquaBloc® Technology - Hermetically sealed edges that ensure no moisture enters the panels of your modular cabinets.</li>
-                <li>AntiBubble® Technology - Super seamless panels without air bubbles for your modular cabinets.</li>
-                <li>DuraBuild™ Technology - Robust structure for modular cabinets, making them strong andlong-lasting.</li>
-                <li>Design Science - Modular kitchens with improved accessibility that makes daily tasks more efficient and reduces stress on the body.</li>
-            </ul>
-        },
+        // {
+        //     title: 'Technology & Science',
+        //     content: <ul>
+        //         <li>AquaBloc® Technology - Hermetically sealed edges that ensure no moisture enters the panels of your modular cabinets.</li>
+        //         <li>AntiBubble® Technology - Super seamless panels without air bubbles for your modular cabinets.</li>
+        //         <li>DuraBuild™ Technology - Robust structure for modular cabinets, making them strong andlong-lasting.</li>
+        //         <li>Design Science - Modular kitchens with improved accessibility that makes daily tasks more efficient and reduces stress on the body.</li>
+        //     </ul>
+        // },
     ]
 
     return (
@@ -71,7 +71,7 @@ const WhyUs = () => {
                 {
                     row1.map((item, key) => (
                         <div className={styles.iconWrap} key={key} >
-                            <Image width={60} height={60} src={item.img} alt='image' />
+                            <Image className={styles.icon}  src={item.img} alt='image' />
                             <div className={styles.contentWrap}>
                                 <div className={styles.number}>{item.number}</div>
                                 <div className={styles.text}>{item.text}</div>
@@ -85,7 +85,7 @@ const WhyUs = () => {
                 {
                     row2.map((item, key) => (
                         <div className={styles.iconWrap} key={key} >
-                            <Image width={60} height={60} src={item.img} alt='image' />
+                            <Image className={styles.icon} src={item.img} alt='image' />
                             <div className={styles.contentWrap}>
                                 <div className={styles.number}>{item.number}</div>
                                 <div className={styles.text}>{item.text}</div>

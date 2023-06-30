@@ -25,10 +25,20 @@
 .content h1 {
     margin: 0;
     font-size: 54px;
+    text-align: center;
 }
 
 .content p {
     font-size: 18px;
     width: 50%;
     text-align: center;
+}
+
+@media screen and (max-width: 750px) {
+    .content h1{
+        font-size: 38px;
+    }
+    .content p{
+        width: 80%;
+    }
 }

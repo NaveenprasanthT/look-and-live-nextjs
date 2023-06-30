@@ -13,18 +13,18 @@ const Footer = () => {
                 </div>
                 <ul className={styles.navItem}>
                     <Link href='/' className={styles.link}><li>Home</li></Link>
-                    <Link href='/AboutUs' className={styles.link}><li>About Us</li></Link>
-                    <Link href='/products' className={styles.link}><li>Products</li></Link>
+                    <Link href='/#about' className={styles.link}><li>About Us</li></Link>
+                    <Link href='/#services' className={styles.link}><li>Services</li></Link>
                     <Link href='/#testimonials' className={styles.link}><li>Testimonials</li></Link>
                 </ul>
                 <div className={styles.content}>
                     <h1>Visit</h1>
-                    <p>Ground Floor, 19th Main Rd, 4th Sector, HSR Layout, Bengaluru, Karnataka 560102</p>
+                    <Link className={styles.contactLink} target="_blank" href='https://goo.gl/maps/riTkqLVJgaN5K9ws6' > <p>Ground Floor, 19th Main Rd, 4th Sector, HSR Layout, Bengaluru, Karnataka 560102</p></Link>
                 </div>
                 <div className={styles.content}>
                     <h1>Contact Us</h1>
-                    <p>9844000873</p>
-                    <p>info@chargeinfra.in</p>
+                    <Link className={styles.contactLink} href='tel:+919844000873'><p>+91 9844000873</p></Link>
+                    <Link className={styles.contactLink} href='mailto:info@chargeinfra.in'><p>info@chargeinfra.in</p></Link>
                 </div>
             </main>
             <div className={styles.copyRight}></div>

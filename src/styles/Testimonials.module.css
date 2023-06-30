@@ -56,3 +56,29 @@
     margin-top: 2%;
     width: 70%;
 }
+
+@media screen and (max-width: 750px) {
+    .cardWrap {
+        display: flex;
+        height: max-content;
+        padding: 6% 2%;
+    }
+    .imageWrap{
+        display: none;
+    }
+   
+    .contentWrap{
+        width: 100%;
+    }
+    .contentWrap h1{
+        font-size: 32px;
+        line-height: 120%;
+        width: max-content;
+    }
+    .contentWrap h4{
+
+    }
+    .review{
+        width: 100%;
+    }
+}

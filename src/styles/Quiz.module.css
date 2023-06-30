@@ -1,6 +1,5 @@
 .QuizMainWrap {
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 .header {
@@ -14,8 +13,14 @@
     top: 0;
 }
 
-.logo {
+.logoWrap {
     width: 33%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo {
+    width: 100%;
     height: 100%;
     object-fit: contain;
 }
@@ -30,12 +35,14 @@
     color: var(--primary-color);
     font-weight: 450;
     font-size: 42px;
+    margin: 0;
 }
 
 .QNo h6 {
     color: #0000004e;
     font-weight: 450;
     font-size: 32px;
+    margin: 0;
 }
 
 .bgImg {
@@ -93,7 +100,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-
+    cursor: pointer;
 }
 
 /* Card Selected */
@@ -102,10 +109,13 @@
     width: 180px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgb(55, 171, 234);
+    box-shadow: 0 0 20px var(--primary-color);
     cursor: pointer;
+}
+
+.cardSelected .title {
+    background: var(--primary-color);
 }
 
 .cardImg {
@@ -120,8 +130,11 @@
     background: #ffffff;
     border-radius: 0 0 10px 10px;
     display: flex;
+    height: 20%;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    line-height: 100%;
 }
 
 .bottomSection {
@@ -129,4 +142,153 @@
     justify-content: space-between;
     margin: 0 10%;
     margin-top: 30px;
+}
+
+.input input[type=range] {
+    -webkit-appearance: none;
+}
+
+.input input[type=range]::-webkit-slider-runnable-track {
+    width: 50px;
+    height: 8px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+
+.input input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    margin-top: -4px;
+}
+
+.input input[type=range]:focus {
+    outline: none;
+}
+
+.input input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+.btnWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    width: 400px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 0 4%;
+}
+
+.btnSelected {
+    width: 400px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 6px;
+    background: var(--primary-color);
+}
+
+.textarea {
+    height: 250px;
+    width: 50%;
+    border: 1px solid white;
+    background: none;
+    font-size: 18px;
+    color: white;
+    padding: 1%;
+}
+
+.textarea:focus {
+    outline: none;
+}
+
+.thanksWrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.thanksImage {
+    width: 100%;
+    height: 100%;
+}
+
+.thanksWrap h4 {
+    width: 70%;
+}
+
+.thanksBtn {
+    width: 150px;
+    height: 80px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 6px;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .card {
+        height: 140px;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    /* Card Selected */
+    .cardSelected {
+        height: 140px;
+        width: 140px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        box-shadow: 0 0 20px var(--primary-color);
+        cursor: pointer;
+    }
+
+    .title {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .glassBg {
+        height: 90%;
+        width: 90%;
+        padding-top: 10%;
+    }
+
+    .glassBg h4 {
+        font-size: 20px;
+    }
+
+    .btn {
+        width: 70vw;
+    }
+
+    .btnSelected {
+        width: 70vw;
+    }
+
+    .textarea {
+        width: 90%;
+        height: 40vh;
+    }
 }
