@@ -183,23 +183,7 @@ const QuizMain = () => {
 
   const handleSubmition = async () => {
 
-    // const res = await fetch("/api/sendgrid", {
-    //   body: JSON.stringify({
-    //     name: name,
-    //     phoneno: phoneno,
-    //     emailId: email,
-    //     subject: "Quiz Form Submittion"
-        
-    //   }),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   method: "POST",
-    // });
-    // const { error } = await res.json();
-    // if (error) {
-    //   alert("error sending mail")
-    // }
+    
 
     const formData = {
       name: name,
