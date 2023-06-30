@@ -6,6 +6,7 @@ import { BookingContext } from '@/Context';
 import Image from 'next/image';
 import booked from '../../public/Assets/icons/booked.png'
 import db from '../FirebaseConfig'
+import emailjs from 'emailjs-com';
 
 const Booking = () => {
     const { setBooking } = useContext(BookingContext);
@@ -14,9 +15,24 @@ const Booking = () => {
     const [email, setEmail] = useState('')
     const [phoneno, setPhoneno] = useState('')
 
+    const SERVICE_ID = process.env.SERVICE_ID;
+    const TEMPLATE_ID = process.env.TEMPLATE_ID;
+    const USER_ID = process.env.USER_ID;
 
-
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = {
+            name: name,
+            email: email,
+            phoneno: phoneno,
+        }
+        emailjs.send('service_j4osggk', 'template_pnfs5mi', formData,'k9WdFwHT4cnJaWrCV')
+            .then(() => {
+                console.log('Email sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+            });
         setActive('thank you')
     }
 
@@ -26,7 +42,7 @@ const Booking = () => {
             <div className={styles.QuizeWrap}>
                 <Image width={80} src={booked} alt='booking icon' />
                 <div className={styles.thanksText}>
-                    Your <br>Free Consultation</br> have been Confirmed,
+                    Your Free Consultation  <br/> have been Confirmed,
                 </div>
                 <div className={styles.msg}>
                     We will get back to you shortly.

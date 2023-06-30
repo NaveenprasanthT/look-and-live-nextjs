@@ -8,6 +8,7 @@ import { QuizData } from './Data'
 import { QuizContext } from '@/Context'
 import { useRouter } from 'next/router';
 import Link from 'next/link'
+import emailjs from 'emailjs-com';
 
 
 const QuizMain = () => {
@@ -181,23 +182,52 @@ const QuizMain = () => {
   //handleSubmition
 
   const handleSubmition = async () => {
-    const res = await fetch("/api/sendgrid", {
-      body: JSON.stringify({
-        name: name,
-        phoneno: phoneno,
-        emailId: email,
-        subject: "Quiz Form Submittion"
+
+    // const res = await fetch("/api/sendgrid", {
+    //   body: JSON.stringify({
+    //     name: name,
+    //     phoneno: phoneno,
+    //     emailId: email,
+    //     subject: "Quiz Form Submittion"
         
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-    });
-    const { error } = await res.json();
-    if (error) {
-      alert("error sending mail")
+    //   }),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   method: "POST",
+    // });
+    // const { error } = await res.json();
+    // if (error) {
+    //   alert("error sending mail")
+    // }
+
+    const formData = {
+      name: name,
+      email: email,
+      phoneno: phoneno,
+      propertyName: propertyName,
+      Q1: Q1,
+      Q2: Q2,
+      Q3: Q3,
+      Q4: Q4,
+      Q5: Q5,
+      Q6: Q6,
+      Q7: Q7,
+      Q8: Q8,
+      Q9: JSON.stringify(Q9),
+      Q10: JSON.stringify(Q10),
+      Q11: JSON.stringify(Q11),
+      Q12:JSON.stringify(Q12),
+      Q13:Q13,
     }
+    emailjs.send('service_j4osggk', 'template_lngtefr', formData, 'k9WdFwHT4cnJaWrCV')
+      .then(() => {
+        console.log('Email sent successfully!');
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+      });
+      setCurrentQ(14);
   }
 
   return (
@@ -351,7 +381,6 @@ const QuizMain = () => {
                                 <Image className={styles.thanksImage} src={item.img} alt='thank you' />
                                 <h4>Thank you for all your inputs. Our team will call you back shortly.</h4>
                                 <button onClick={() => router.push('/')} className={styles.thanksBtn} >Done</button>
-
                               </div>
                             )
 

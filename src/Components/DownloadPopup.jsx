@@ -8,6 +8,7 @@ import { useRouter } from 'next/router';
 import download from '../../public/Assets/icons/download.png'
 import Image from 'next/image';
 import Link from 'next/link';
+import emailjs from "emailjs-com";
 
 
 const DownloadPopup = () => {
@@ -47,7 +48,7 @@ const DownloadPopup = () => {
         window.confirmationResult = confirmationResult;
         // ...
       }).catch((error) => {
-        alert(error)
+        console.log(error);
       });
   }
 
@@ -63,23 +64,37 @@ const DownloadPopup = () => {
       // ...
     });
     if (invalidOtp != true) {
-      const res = await fetch("/api/sendgrid", {
-        body: JSON.stringify({
-          name: name,
-          phoneno: phoneno,
-          emailId: email,
-          propertyName: propertyName,
-          subject: "Download form"
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-        method: "POST",
-      });
-      const { error } = await res.json();
-      if (error) {
-        alert("error sending mail")
+      // const res = await fetch("/api/sendgrid", {
+      //   body: JSON.stringify({
+      //     name: name,
+      //     phoneno: phoneno,
+      //     emailId: email,
+      //     propertyName: propertyName,
+      //     subject: "Download form"
+      //   }),
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   method: "POST",
+      // });
+      // const { error } = await res.json();
+      // if (error) {
+      //   alert("error sending mail")
+      // }
+
+      const formData = {
+        name: name,
+        email: email,
+        phoneno: phoneno,
+        propertyName: propertyName,
       }
+      emailjs.send('service_j4osggk', 'template_lngtefr', formData, 'k9WdFwHT4cnJaWrCV')
+        .then(() => {
+          console.log('Email sent successfully!');
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+        });
     }
   }
 
