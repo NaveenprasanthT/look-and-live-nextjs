@@ -79,7 +79,7 @@ const Testimonials = () => {
         </div>,
     ]
     return (
-        <div className={styles.sectionWrap}>
+        <div className={styles.sectionWrap} id="testimonials">
             <Slider {...settings}>
                 {slides.map((slide, index) => (
                     <div key={index}>
