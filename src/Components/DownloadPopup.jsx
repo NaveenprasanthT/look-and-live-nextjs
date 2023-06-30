@@ -52,6 +52,20 @@ const DownloadPopup = () => {
       });
   }
 
+  const handleDownload = () => {
+    fetch('Look and Live.pdf').then(response => {
+      response.blob().then(blob => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = 'Look&Live.pdf';
+        alink.click();
+      })
+    })
+  };
+
   //handleVerification
   const handleVerification = async () => {
     const code = otp;
@@ -64,24 +78,6 @@ const DownloadPopup = () => {
       // ...
     });
     if (invalidOtp != true) {
-      // const res = await fetch("/api/sendgrid", {
-      //   body: JSON.stringify({
-      //     name: name,
-      //     phoneno: phoneno,
-      //     emailId: email,
-      //     propertyName: propertyName,
-      //     subject: "Download form"
-      //   }),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   method: "POST",
-      // });
-      // const { error } = await res.json();
-      // if (error) {
-      //   alert("error sending mail")
-      // }
-
       const formData = {
         name: name,
         email: email,
@@ -95,6 +91,7 @@ const DownloadPopup = () => {
         .catch((error) => {
           console.error('Error sending email:', error);
         });
+      handleDownload();
     }
   }
 
