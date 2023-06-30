@@ -43,3 +43,9 @@
     text-align: center;
     padding: 0 10%;
 }
+
+@media screen and (max-width: 750px) {
+    .title{
+        font-size: 32px;
+    }
+}

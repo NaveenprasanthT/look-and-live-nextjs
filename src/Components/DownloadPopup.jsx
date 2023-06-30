@@ -1,21 +1,26 @@
 import React, { useContext, useState } from 'react'
 import styles from '@/styles/DownloadPopup.module.css'
 import { GrClose } from 'react-icons/gr'
-import { DownloadContext } from '../Context'
+import { DownloadContext, QuizContext } from '../Context'
 import { getAuth, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import Button from './Button';
 import { useRouter } from 'next/router';
+import download from '../../public/Assets/icons/download.png'
+import Image from 'next/image';
+import Link from 'next/link';
 
 
 const DownloadPopup = () => {
   const { setDownloadPop } = useContext(DownloadContext);
-  const [active, setActive] = useState("thank ")
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phoneno, setPhoneno] = useState('')
-  const [propertyName, setPropertyName] = useState('')
+  const [active, setActive] = useState("Form")
+  // const [name, setName] = useState('')
+  // const [email, setEmail] = useState('')
+  // const [phoneno, setPhoneno] = useState('')
+  // const [propertyName, setPropertyName] = useState('')
   const [otp, setotp] = useState('')
   const [invalidOtp, setinvalidOtp] = useState(false)
+
+  const { name, setName, email, setEmail, phoneno, setPhoneno, propertyName, setPropertyName } = useContext(QuizContext)
 
   const router = useRouter()
 
@@ -42,12 +47,12 @@ const DownloadPopup = () => {
         window.confirmationResult = confirmationResult;
         // ...
       }).catch((error) => {
-
+        alert(error)
       });
   }
 
   //handleVerification
-  const handleVerification = () => {
+  const handleVerification = async () => {
     const code = otp;
     window.confirmationResult.confirm(code).then((result) => {
       setActive("Thank you")
@@ -57,6 +62,25 @@ const DownloadPopup = () => {
       setinvalidOtp(true);
       // ...
     });
+    if (invalidOtp != true) {
+      const res = await fetch("/api/sendgrid", {
+        body: JSON.stringify({
+          name: name,
+          phoneno: phoneno,
+          emailId: email,
+          propertyName: propertyName,
+          subject: "Download form"
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+      });
+      const { error } = await res.json();
+      if (error) {
+        alert("error sending mail")
+      }
+    }
   }
 
 
@@ -64,6 +88,7 @@ const DownloadPopup = () => {
   const Thankyou = () => {
     return (
       <div className={styles.QuizeWrap}>
+        <Image width={80} src={download} alt='icon' />
         <div className={styles.thanksText}>
           Thank you for downloading
           interior designing guide
@@ -111,7 +136,7 @@ const DownloadPopup = () => {
                 </div>
               </form>
               <div className={styles.DownloadPolicy}>
-                <p className={styles.pop_up_privacy_policy}>By submitting this form, you agree to the <span className={styles.EMI_yellow_text}>Privacy Policy </span> & <span className={styles.EMI_yellow_text}>Terms and Conditions</span></p>
+                <p className={styles.pop_up_privacy_policy}>By submitting this form, you agree to the <Link target="_blank" href='/Privacy-Policy' className={styles.highlight}>Privacy Policy </Link> & <Link href='/Terms-Condition' target="_blank" className={styles.highlight}>Terms and Conditions</Link></p>
               </div>
             </div>
 
@@ -121,7 +146,7 @@ const DownloadPopup = () => {
 
               <div className={styles.sendOtpWrap}>
                 <input className={invalidOtp ? styles.inputError : styles.input} autoFocus="autofocus" type="text" value={otp} onChange={(e) => { setotp(e.target.value) }} placeholder='Enter OTP' required />
-                <div onClick={handleVerification} ><Button value='Verify' color='#000' small={true} /></div>
+                <div onClick={handleVerification} ><Button value='Verify' color='#000' small={false} /></div>
                 <p className={invalidOtp ? styles.alertActive : styles.alertInactive}>Invalid OTP</p>
               </div>
 

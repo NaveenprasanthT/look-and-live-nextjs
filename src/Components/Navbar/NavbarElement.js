@@ -25,6 +25,12 @@ export const LogoWrapMobile = styled(Link)`
 export const LogoMobile = styled(Image)`
     height: 100%;
     width: 80%;
+    @media screen and ( max-width: 1000px) {
+        width: 40%;
+    }
+    @media screen and ( max-width: 450px) {
+        width: 80%;
+    }
 `;
 
 export const Hamburger = styled.div`

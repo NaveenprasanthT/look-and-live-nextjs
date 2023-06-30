@@ -7,11 +7,13 @@ body {
   margin: 0;
   background: var(--secondary-color);
   color: #fff;
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 * {
   font-family: 'Poppins', sans-serif;
-  
+
 }
 
 :root {

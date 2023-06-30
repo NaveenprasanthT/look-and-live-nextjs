@@ -42,15 +42,17 @@
     padding: 0;
     height: max-content;
     border: 2px solid transparent;
-    border-left: none;
+    transition: .4s ease-in-out;
+    border-bottom: none;
     border-right: none;
+    padding: 6px 10px;
 }
 
 .navItem li:hover {
     color: var(--primary-color);
     cursor: pointer;
     border: 2px solid var(--primary-color);
-    border-left: none;
+    border-bottom: none;
     border-right: none;
 }
 

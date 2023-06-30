@@ -1,16 +1,16 @@
 .downloadWrap {
     width: 30%;
     min-width: 300px;
-    height: 60vh;
+    height: max-content;
     position: fixed;
     top: 15%;
     left: 30%;
     background: #fff;
-    padding: 3%;
+    padding: 5%;
     padding-top: 1%;
     color: #000;
     z-index: 999;
-    box-shadow: #00000064 0px 0px 15px ;
+    box-shadow: #ffffff64 0px 0px 15px;
 }
 
 .heading {
@@ -24,7 +24,9 @@
     font-size: 20px;
     cursor: pointer;
 }
-
+.bookinMainSection{
+    margin-top: 6%;
+}
 .Downloadform {
     display: flex;
     flex-direction: column;
@@ -67,7 +69,37 @@
     width: max-content;
 }
 
+.bookingBtn input[type=submit] {
+    font-family: "Brandon_med";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-image: linear-gradient(to right, black, white) 1;
+    background: none;
+    height: 40px;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    transition: ease-in 0.3s;
+    margin: 0;
+    margin-top: 30%;
+    width: max-content;
+}
+
+.highlight{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
 .downloadBtn input[type=submit]:hover {
+    background-color: #CDAF4C;
+    border-image: linear-gradient(to right, white, black) 1;
+
+}
+.bookingBtn input[type=submit]:hover {
     background-color: #CDAF4C;
     border-image: linear-gradient(to right, white, black) 1;
 
@@ -105,7 +137,7 @@
 
 .quizBtn button {
     margin-top: 10px;
-    padding: 3% 6%;  
+    padding: 3% 6%;
 }
 
 
@@ -143,14 +175,14 @@
 }
 
 .sendOtpWrap button {
-   margin-top: 4%;
-   padding: 2% 6%;
+    margin-top: 40%;
+    padding:  20px;
 }
 
 .sendOtpWrap button:hover {
     cursor: pointer;
     background: #CDAF4C;
-    border-image: linear-gradient(to right, black, white ) 1;
+    border-image: linear-gradient(to right, black, white) 1;
     color: #fff;
 }
 
@@ -166,7 +198,8 @@
 
 @media screen and (max-width: 750px) {
     .downloadWrap {
-        left: 15vw;
+        left: 10vw;
         min-width: 70vw;
+        top: 20%;
     }
 }

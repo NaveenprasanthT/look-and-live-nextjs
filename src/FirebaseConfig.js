@@ -3,12 +3,13 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAJ3G1aBA1VMdV0RsHOVJ3BsJJVyCkXdmM",
-    authDomain: "looklive-b4a65.firebaseapp.com",
-    projectId: "looklive-b4a65",
-    storageBucket: "looklive-b4a65.appspot.com",
-    messagingSenderId: "800529865026",
-    appId: "1:800529865026:web:06d2cad6fb8b3ba5a2d0db"
+    apiKey: "AIzaSyCR3mNlAANtzTjR9kRASAGuPS2WJ27LJbI",
+    authDomain: "look-and-live-20571.firebaseapp.com",
+    projectId: "look-and-live-20571",
+    storageBucket: "look-and-live-20571.appspot.com",
+    messagingSenderId: "334639506723",
+    appId: "1:334639506723:web:60bcd9d7638d66bbcd9896",
+    measurementId: "G-480ZNLXF48"
 };
 
 // Initialize Firebase

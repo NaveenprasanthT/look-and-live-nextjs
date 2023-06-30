@@ -3,6 +3,9 @@ import styles from '@/styles/DownloadPopup.module.css'
 import { GrClose } from 'react-icons/gr'
 import Button from './Button';
 import { BookingContext } from '@/Context';
+import Image from 'next/image';
+import booked from '../../public/Assets/icons/booked.png'
+import db from '../FirebaseConfig'
 
 const Booking = () => {
     const { setBooking } = useContext(BookingContext);
@@ -21,19 +24,16 @@ const Booking = () => {
     const Thankyou = () => {
         return (
             <div className={styles.QuizeWrap}>
+                <Image width={80} src={booked} alt='booking icon' />
                 <div className={styles.thanksText}>
-                    Thank you for Booking
+                    Your <br>Free Consultation</br> have been Confirmed,
                 </div>
-                {/* <div className={styles.downloadAgain}>
-                    Your download should start
-                    automatically, if not <span style={{ color: 'var(--primary-)' }} >click here</span>.
-                </div> */}
                 <div className={styles.msg}>
                     We will get back to you shortly.
                 </div>
-                <div className={styles.quizBtn} onClick={() => setBooking(false)} >
-                    <Button  value='Close' color='#000' />
-                </div>
+                {/* <div className={styles.quizBtn} onClick={() => setBooking(false)} >
+                    <Button small={true}  value='Close' color='#000' />
+                </div> */}
             </div>
         )
     }
@@ -43,12 +43,12 @@ const Booking = () => {
         <>
             <div className={styles.downloadWrap}>
                 <div className={styles.heading}>
-                    <h1>Book free consultation</h1>
+                    <h3>Book free consultation</h3>
                     <div className={styles.close} onClick={() => setBooking(false)} >
                         <GrClose />
                     </div>
                 </div>
-                <div className={styles.mainSection}>
+                <div className={styles.bookinMainSection}>
                     {active === "Form" ?
 
                         // Info Form
@@ -57,7 +57,7 @@ const Booking = () => {
                                 <input type="text" placeholder='Name*' value={name} required onChange={(e) => setName(e.target.value)} />
                                 <input type="email" placeholder='Email*' required value={email} onChange={(e) => setEmail(e.target.value)} />
                                 <input type="text" placeholder='Phone Number*' required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
-                                <div className={styles.downloadBtn} >
+                                <div className={styles.bookingBtn} >
                                     <input type='submit' value="SUBMIT" />
                                 </div>
                             </form>

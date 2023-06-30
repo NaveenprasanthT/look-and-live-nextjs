@@ -25,6 +25,12 @@
     width: max-content;
 }
 
+.icon {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
 .number {
     font-weight: 420;
     font-size: 32px;
@@ -45,4 +51,33 @@
     font-size: 20px;
     line-height: 150%;
     margin-bottom: 4%;
+}
+
+@media screen and (max-width: 750px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .iconWrap {
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .icon {
+        width: 50%;
+    }
+
+    .number {
+        text-align: center;
+    }
+
+    .contentWrap {
+        margin: 0;
+    }
+
+    .text {
+        width: 0;
+    }
 }
