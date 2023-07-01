@@ -21,27 +21,20 @@ const WhyUs = () => {
             text: 'Skilled interior designer',
             img: require('../../../public/Assets/icons/choose3.png'),
         },
-    ]
-    const row2 = [
         {
-            number: '05+',
-            text: 'Years Experience',
+            number: '200+',
+            text: 'Workforce',
             img: require('../../../public/Assets/icons/choose4.png'),
         },
         {
-            number: '100+',
-            text: 'Projects Delivered',
+            number: '09+',
+            text: 'Cities',
             img: require('../../../public/Assets/icons/choose5.png')
         },
         {
-            number: '50+',
-            text: 'Skilled interior designer',
+            number: '100%',
+            text: 'Transparent Pricing',
             img: require('../../../public/Assets/icons/choose5.png'),
-        },
-        {
-            number: '50+',
-            text: 'Skilled interior designer',
-            img: require('../../../public/Assets/icons/choose7.png')
         },
     ]
 
@@ -80,19 +73,6 @@ const WhyUs = () => {
                     ))
                 }
 
-            </div>
-            <div className={styles.row2}>
-                {
-                    row2.map((item, key) => (
-                        <div className={styles.iconWrap} key={key} >
-                            <Image className={styles.icon} src={item.img} alt='image' />
-                            <div className={styles.contentWrap}>
-                                <div className={styles.number}>{item.number}</div>
-                                <div className={styles.text}>{item.text}</div>
-                            </div>
-                        </div>
-                    ))
-                }
             </div>
             <div className={styles.warranty}>
                 {

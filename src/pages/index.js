@@ -29,6 +29,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <>
+      {downloadPop ? <DownloadPopup /> : ''}
+      {booking ? <Booking /> : ''}
         <Navbar />
         <HeroSection />
         <Index {...aboutUs} />
@@ -42,8 +44,6 @@ export default function Home() {
         <Partners />
         <Testimonials />
         <Footer />
-        {downloadPop ? <DownloadPopup /> : ''}
-        {booking ? <Booking /> : ''}
       </>
     </>
   )

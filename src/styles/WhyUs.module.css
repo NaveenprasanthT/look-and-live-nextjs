@@ -7,12 +7,11 @@
     font-size: 48px;
 }
 
-.row1,
-.row2 {
-    display: flex;
-    flex-wrap: wrap;
+.row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
     justify-content: space-around;
-    width: 100%;
     margin: 4% 0;
 }
 
@@ -21,8 +20,7 @@
 }
 
 .contentWrap {
-    margin-left: 10%;
-    width: max-content;
+    margin-left: 5%;
 }
 
 .icon {
@@ -34,10 +32,6 @@
 .number {
     font-weight: 420;
     font-size: 32px;
-}
-
-.text {
-    width: max-content;
 }
 
 .warranty {
@@ -53,31 +47,23 @@
     margin-bottom: 4%;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px){
+    .row1{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 650px) {
     .title {
-        font-size: 32px;
+        font-size: 30px;
     }
-
-    .iconWrap {
-        width: 50%;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
+    .icon{
+        width: 25%;
     }
-
-    .icon {
-        width: 50%;
-    }
-
     .number {
-        text-align: center;
+        font-size: 22px;
     }
-
-    .contentWrap {
-        margin: 0;
-    }
-
     .text {
-        width: 0;
+        font-size: 13px;
     }
 }

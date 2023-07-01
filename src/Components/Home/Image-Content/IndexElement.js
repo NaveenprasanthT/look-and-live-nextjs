@@ -94,14 +94,16 @@ export const Right = styled.div`
        
     
     }
-    h6{
+    h3{
         margin: 0;
         display: ${({ id }) => (id === 'emi' ? 'none' : 'block')};
+        font-size: 15px;
+        font-weight: 300;
     }
     P{
         margin: 0;
         margin-bottom: 4%;
-        font-size: 20px;
+        font-size: 16px;
         line-height: 160%;
         font-weight: 300;
         color: ${({id}) => (id==='download' ? '#000' : '')};

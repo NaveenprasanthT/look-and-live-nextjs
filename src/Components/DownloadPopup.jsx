@@ -126,6 +126,7 @@ const DownloadPopup = () => {
   return (
     <>
       <div className={styles.downloadWrap}>
+      <div id='recaptcha-container'></div>
         <div className={styles.heading}>
           <h1>Download</h1>
           <div className={styles.close} onClick={() => setDownloadPop(false)} >
@@ -171,7 +172,6 @@ const DownloadPopup = () => {
         </div>
 
       </div>
-      <div id='recaptcha-container'></div>
     </>
   )
 }
