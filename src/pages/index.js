@@ -36,7 +36,6 @@ export default function Home() {
         <Index {...aboutUs} />
         <WhyUs />
         <Services />
-        <Index {...residential} />
         <HowItWorks />
         <Index {...emi} />
         {/* <Index {...parentCo} /> */}

@@ -12,11 +12,6 @@ const Services = () => {
             image: require('../../../public/Assets/Services/1st.png')
         },
         {
-            title: 'Modular wardrobes',
-            desc: 'Design your dream closet with modularity.',
-            image: require('../../../public/Assets/Services/2nd.png')
-        },
-        {
             title: 'Lighting',
             desc: 'Brighten up your space with elegance.',
             image: require('../../../public/Assets/Services/3rd.png')

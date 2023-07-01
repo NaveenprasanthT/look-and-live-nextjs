@@ -141,7 +141,7 @@ const DownloadPopup = () => {
               <form action="" className={styles.Downloadform} onSubmit={handleDownloadBtn} >
                 <input type="text" placeholder='Name*' value={name} required onChange={(e) => setName(e.target.value)} />
                 <input type="email" placeholder='Email*' required value={email} onChange={(e) => setEmail(e.target.value)} />
-                <input type="text" placeholder='Phone Number*' required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
+                <input type="text" placeholder='Phone Number*' pattern=".{10,}" required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
                 <input type="text" placeholder='Property Name' required value={propertyName} onChange={(e) => setPropertyName(e.target.value)} />
 
                 <div className={styles.downloadBtn} >

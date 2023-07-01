@@ -37,7 +37,7 @@ const HeroSection = () => {
     }
 
     return (
-        <div className={styles.SectionWrap}>
+        <div className={styles.SectionWrap} id='home'>
             <Image className={styles.image} width={400} height={100} src={images[currentIndex]} alt="Slider Image" />
             <div className={styles.content}>
                 <p style={{ color: 'var(--primary-color)' }} >ARCHITECTURE DESIGN</p>
