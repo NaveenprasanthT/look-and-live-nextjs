@@ -71,6 +71,7 @@ const DownloadPopup = () => {
     const code = otp;
     window.confirmationResult.confirm(code).then((result) => {
       setActive("Thank you")
+      handleDownload();
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)
@@ -91,7 +92,6 @@ const DownloadPopup = () => {
         .catch((error) => {
           console.error('Error sending email:', error);
         });
-      handleDownload();
     }
   }
 
@@ -167,10 +167,8 @@ const DownloadPopup = () => {
 
               // thankyou
               <Thankyou />
-
           }
         </div>
-
       </div>
     </>
   )

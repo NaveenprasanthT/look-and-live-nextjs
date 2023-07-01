@@ -195,6 +195,10 @@
 .alertInactive {
     display: none;
 }
+ 
+.sendOtpWrap Button{
+    padding: 10px 20px;
+}
 
 @media screen and (max-width: 750px) {
     .downloadWrap {
