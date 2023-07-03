@@ -37,7 +37,7 @@ export const emi = {
     id: 'emi',
     title: 'ATTRACTIVE EMI OPTIONS',
     titleColor: '#fff',
-    topTitle: true,
+    topTitle: false,
     heading: <h1>Want to book a <span className={styles.highlight}>FREE</span> Consultation session?</h1>,
     content: <h2>Design Now, Pay later</h2>,
     subContent: <h3>

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from '@/styles/WhyUs.module.css'
-import Image from 'next/image'
-
+import Image from 'next/image';
+import { BookingContext } from '@/Context';
 
 const WhyUs = () => {
-
+    const { setBooking } = useContext(BookingContext);
     const row1 = [
         {
             number: '05+',
@@ -58,13 +58,17 @@ const WhyUs = () => {
     ]
 
     return (
-        <div className={styles.SectionWrap}>
-            <div className={styles.title}>Why Choose Us?</div>
+        <div className={styles.SectionWrap} id='about'>
+            <div className={styles.HeaderContainer}>
+                <h1>ABOUT US</h1>
+                <h2>We’re here to bring your Vision to Life!</h2>
+                <p>LOOK AND LIVE creates beautiful and functional living spaces. Our mission is to provide high-quality, aesthetically pleasant, useful, and long-lasting home decor products.We are constantly exploring new ways to reduce our environmental impact and promote sustainable living & find the perfect products for your home.</p>
+            </div>
             <div className={styles.row1}>
                 {
                     row1.map((item, key) => (
                         <div className={styles.iconWrap} key={key} >
-                            <Image className={styles.icon}  src={item.img} alt='image' />
+                            <Image className={styles.icon} src={item.img} alt='image' width={1000} height={1000}/>
                             <div className={styles.contentWrap}>
                                 <div className={styles.number}>{item.number}</div>
                                 <div className={styles.text}>{item.text}</div>
@@ -72,8 +76,8 @@ const WhyUs = () => {
                         </div>
                     ))
                 }
-
             </div>
+            <button className={styles.aboutUsBtn} onClick={() => setBooking(true)}>Book Free Consultation</button>
             <div className={styles.warranty}>
                 {
                     data.map((item, key) => (

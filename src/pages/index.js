@@ -33,7 +33,7 @@ export default function Home() {
       {booking ? <Booking /> : ''}
         <Navbar />
         <HeroSection />
-        <Index {...aboutUs} />
+        {/*<Index {...aboutUs} />*/}
         <WhyUs />
         <Services />
         <HowItWorks />

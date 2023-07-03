@@ -84,6 +84,7 @@
     color: #fff;
     margin: 2%;
     font-size: 2vw;
+    text-align: center;
 }
 
 .content p {
@@ -142,8 +143,5 @@
     .cards {
         grid-template-columns: 1fr 1fr ;
         gap: .3rem;
-    }
-    .content h3{
-        text-align: center;
     }
 }

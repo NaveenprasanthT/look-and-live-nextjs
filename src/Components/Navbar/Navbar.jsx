@@ -40,7 +40,7 @@ const Header = () => {
 
     return (
         <>
-            <div className={styles.headerWrap}  ref={navbarHeightRef} style={{opacity: colorChange ? '0.8' : '1'}}>
+            <div className={styles.headerWrap}  ref={navbarHeightRef} style={{opacity: colorChange ? '0.85' : '1'}}>
                 <div className={styles.logo}>
                     <Link href='/'>
                         <Image src={logo}

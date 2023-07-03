@@ -15,8 +15,8 @@ export const Toptitle = styled.div`
     }
 `;
 export const Title = styled.div`
-    font-weight: 420;
-    font-size: 24px;
+    font-weight: 500;
+    font-size: 35px;
     display: ${({ topTitle }) => (topTitle ? 'none' : 'block')};
     @media screen and (max-width: 1000px){
         font-size: 22px;
@@ -75,13 +75,16 @@ export const Right = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 10%;
     padding-left: 0;
 
     h1{
-        margin: 2% 0;
+        margin: 4% 0;
         color: ${({ titleColor }) => (titleColor)};
-        font-size: 38px;
+        font-size: 34px;
+        font-weight: 420;
         @media screen and (max-width: 1000px){
         font-size: 26px;
     }
@@ -91,8 +94,6 @@ export const Right = styled.div`
         color: ${({ titleColor }) => (titleColor)};
         font-size: 38px;
         display: ${({ id }) => (id === 'emi' ? 'none' : 'block')};
-       
-    
     }
     h3{
         margin: 0;

@@ -30,7 +30,7 @@
 
 .image {
     width: 100%;
-    height: 70%;
+    height: 60%;
     object-fit: cover;
 }
 
@@ -49,14 +49,14 @@
   .cardsWrapper {
     width: 100%;
     white-space: nowrap;
-    animation: marquee 20s linear infinite;
+    animation: marquee 30s linear infinite;
     padding: 0 10%;
   }
   
   .cards {
     display: inline-block;
     transition: transform 0.5s linear;
-    animation: marqueeContent 20s linear infinite;
+    animation: marqueeContent 30s linear infinite;
   }
   
   .cards .card {

@@ -1,10 +1,60 @@
 .SectionWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     padding: 2% 6%;
 }
 
-.title {
-    font-weight: 420;
-    font-size: 48px;
+.HeaderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.HeaderContainer h1 {
+    margin: 0;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+
+.HeaderContainer h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+
+.HeaderContainer p {
+    margin: 0;
+    font-size: 16px;
+    width: 90%;
+    font-weight: 200;
+}
+
+.aboutUsBtn{
+    align-self: center;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1.7px solid #ffffff;
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.aboutUsBtn:hover{
+    background-color: var(--primary-color);
+}
+
+.title{
+    font-size: 38px;
+    font-weight: 400;
 }
 
 .row1 {
@@ -47,8 +97,8 @@
     margin-bottom: 4%;
 }
 
-@media screen and (max-width: 900px){
-    .row1{
+@media screen and (max-width: 900px) {
+    .row1 {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -57,13 +107,25 @@
     .title {
         font-size: 30px;
     }
-    .icon{
+
+    .icon {
         width: 25%;
     }
+
     .number {
         font-size: 22px;
     }
+
     .text {
         font-size: 13px;
+    }
+    .HeaderContainer h1{
+        font-size: 38px;
+    }
+    .HeaderContainer h2{
+        font-size: 24px;
+    }
+    .HeaderContainer p{
+        width: 100%;
     }
 }
