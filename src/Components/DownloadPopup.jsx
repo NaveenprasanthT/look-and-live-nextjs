@@ -13,7 +13,7 @@ import emailjs from "emailjs-com";
 
 const DownloadPopup = () => {
   const { setDownloadPop } = useContext(DownloadContext);
-  const [active, setActive] = useState("Form")
+  const [active, setActive] = useState("Form");
   // const [name, setName] = useState('')
   // const [email, setEmail] = useState('')
   // const [phoneno, setPhoneno] = useState('')
@@ -71,7 +71,7 @@ const DownloadPopup = () => {
     const code = otp;
     window.confirmationResult.confirm(code).then((result) => {
       setActive("Thank you")
-      handleDownload();
+        handleDownload();
       // ...
     }).catch((error) => {
       // User couldn't sign in (bad verification code?)

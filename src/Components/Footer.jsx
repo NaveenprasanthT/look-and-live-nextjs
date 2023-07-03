@@ -5,6 +5,18 @@ import logo from '../../public/Assets/logo.png'
 import Link from 'next/link'
 
 const Footer = () => {
+
+    const handleClick = (e, id) => {
+        e.preventDefault();
+        
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = element.offsetTop - 62.5;
+          window.scrollTo({ top: offset, behavior: 'smooth' });
+        }
+      };
+
+
     return (
         <div className={styles.footerWrap}>
             <main className={styles.main} >
@@ -12,11 +24,12 @@ const Footer = () => {
                     <Image className={styles.logo} src={logo} alt='logo' />
                 </div>
                 <ul className={styles.navItem}>
-                    <Link href='/' className={styles.link}><li>Home</li></Link>
-                    <Link href='/#about' className={styles.link}><li>About Us</li></Link>
-                    <Link href='/#services' className={styles.link}><li>Services</li></Link>
-                    <Link href='/#work' className={styles.link}><li>Our Work</li></Link>
-                    <Link href='/#testimonials' className={styles.link}><li>Testimonials</li></Link>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'home')}>Home</li>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'about')}>About Us</li>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'services')}>Services</li>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'work')}>Our Work</li>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'contact')}>Contact Us</li>
+                    <li className={styles.link} onClick={(e) => handleClick(e,'testimonials')}>Testimonials</li>
                     <Link href='/Privacy-Policy' className={styles.linkPhone} style={{textDecoration:'none',color:'#fff'}}><li>Privacy Policy</li></Link>
                     <Link href='/Terms-Condition' className={styles.linkPhone} style={{textDecoration:'none',color:'#fff'}}><li>Terms & Conditions</li></Link>
                 </ul>

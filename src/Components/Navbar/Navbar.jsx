@@ -56,9 +56,9 @@ const Header = () => {
                     <div onClick={(e) => handleClick(e,"services")} className={styles.link}><li>Services</li></div>
                     <div onClick={(e) => handleClick(e,"testimonials")} className={styles.link}><li>Testimonials</li></div>
                 </ul>
-                <Link href='tel:+919844000873'  >
+                <div onClick={(e) => handleClick(e,"contact")}  >
                     <Button value='Contact' color='#000' small={true} />
-                </Link>
+                </div>
 
                 {/* mobileView */}
             </div>

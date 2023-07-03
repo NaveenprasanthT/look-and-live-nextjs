@@ -7,7 +7,7 @@ const Services = () => {
 
     const servicesData = [
         {
-            title: 'Modular kitchens',
+            title: 'Modular Design',
             desc: 'Customized cooking spaces for you.',
             image: require('../../../public/Assets/Services/1st.png')
         },

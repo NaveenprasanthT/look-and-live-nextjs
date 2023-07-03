@@ -1,0 +1,160 @@
+.sectionWrap {
+
+}
+
+.topSection {
+    background: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 0;
+
+}
+
+.topSection h2 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.topSection p {
+    margin: 0;
+    margin-top: 1%;
+}
+
+.phoneEmail {
+    display: flex;
+    flex-direction: row;
+    gap: 20%;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    color: var(--primary-color);
+    font-size: 25px;
+}
+
+.bottomSection {
+    display: flex;
+    padding: 5% 6%;
+    gap: 2%;
+    flex-wrap: wrap;
+}
+
+.mapWrap {
+    display: flex;
+    justify-content: space-between;
+    height: 270px;
+}
+
+.mapContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.mapContent h6{
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.mapContent p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.cityContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.card {
+    width: 180px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    height: 120px;
+}
+
+.content{
+    background-color: var(--primary-color);
+    padding: 2%;
+}
+
+.bottomSection h4{
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 750px) {
+    .mapWrap {
+        flex-direction: column;
+        text-align: center;
+    }
+    .mapContent h6{
+        align-self: center;
+    }
+    .mapContent p{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .bottomSection h4{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-width: 1180px){
+    .cityContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .card{
+        flex: 0 0 calc(33.3 - 10px);
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .card {
+        width: 45%;
+        height: 180px;
+    }
+    .image {
+        height: 100px;
+    }
+    .topSection h2{
+        font-size: 24px;
+        margin: 4%;
+    }
+    .topSection p{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

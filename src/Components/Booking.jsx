@@ -7,6 +7,7 @@ import Image from 'next/image';
 import booked from '../../public/Assets/icons/booked.png'
 import db from '../FirebaseConfig'
 import emailjs from 'emailjs-com';
+import { useRouter } from 'next/router';
 
 const Booking = () => {
     const { setBooking } = useContext(BookingContext);
@@ -14,10 +15,7 @@ const Booking = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [phoneno, setPhoneno] = useState('')
-
-    const SERVICE_ID = process.env.SERVICE_ID;
-    const TEMPLATE_ID = process.env.TEMPLATE_ID;
-    const USER_ID = process.env.USER_ID;
+    const router = useRouter();
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -26,7 +24,7 @@ const Booking = () => {
             email: email,
             phoneno: phoneno,
         }
-        emailjs.send('service_j4osggk', 'template_pnfs5mi', formData,'k9WdFwHT4cnJaWrCV')
+        emailjs.send('service_j4osggk', 'template_pnfs5mi', formData, 'k9WdFwHT4cnJaWrCV')
             .then(() => {
                 console.log('Email sent successfully!');
             })
@@ -42,14 +40,18 @@ const Booking = () => {
             <div className={styles.QuizeWrap}>
                 <Image width={80} src={booked} alt='booking icon' />
                 <div className={styles.thanksText}>
-                    Your Free Consultation  <br/> have been Confirmed,
+                    Your Free Consultation  <br /> have been Confirmed,
                 </div>
                 <div className={styles.msg}>
-                    We will get back to you shortly.
+                    We will get back to you shortly. <br/><br/>Let us know your preferences, get ready for our customer quiz!
+
                 </div>
                 {/* <div className={styles.quizBtn} onClick={() => setBooking(false)} >
                     <Button small={true}  value='Close' color='#000' />
                 </div> */}
+                <div onClick={() => router.push('/Quiz')} className={styles.quizBtn}>
+                    <Button value='Start Now' color='#000' />
+                </div>
             </div>
         )
     }
@@ -72,7 +74,7 @@ const Booking = () => {
                             <form action="" className={styles.Downloadform} onSubmit={handleSubmit} >
                                 <input type="text" placeholder='Name*' value={name} required onChange={(e) => setName(e.target.value)} />
                                 <input type="email" placeholder='Email*' required value={email} onChange={(e) => setEmail(e.target.value)} />
-                                <input type="text" placeholder='Phone Number*' required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
+                                <input type="text" pattern=".{10,}" placeholder='Phone Number*' required value={phoneno} onChange={(e) => setPhoneno(e.target.value)} />
                                 <div className={styles.bookingBtn} >
                                     <input type='submit' value="SUBMIT" />
                                 </div>

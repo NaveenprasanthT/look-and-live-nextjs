@@ -5,12 +5,14 @@ import { Fade, Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import Button from '../Button';
 import { BookingContext } from '@/Context';
+import { DownloadContext } from '@/Context';
 // import img from '../../../public/Assets/HomeSlider'
 
 
 const HeroSection = () => {
 
   const { setBooking } = useContext(BookingContext);
+  const { setDownloadPop } = useContext(DownloadContext);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -38,13 +40,15 @@ const HeroSection = () => {
     return <div>No images to display</div>;
   }
 
+
+
   return (
     <div className={styles.SectionWrap} id='home'>
       {/*<Image className={styles.image} width={400} height={100} src={images[currentIndex]} alt="Slider Image" />*/}
       <Zoom scale={1.2} arrows={false} autoplay duration={3000} transitionDuration={2500}>
         {images.map((fadeImage, index) => (
           <div key={index}>
-            <Image width={1000} height={1000} style={{ width: '100%', height: '90vh', zIndex: '1',objectFit:'cover' }} src={fadeImage} alt="image" />
+            <Image width={1000} height={1000} style={{ width: '100%', height: '90vh', zIndex: '1', objectFit: 'cover' }} src={fadeImage} alt="image" />
           </div>
         ))}
       </Zoom>
@@ -52,9 +56,9 @@ const HeroSection = () => {
         <p style={{ color: 'var(--primary-color)' }} >ARCHITECTURE DESIGN</p>
         <h1>Elevate your space with style.</h1>
         <p>We enhance the appearance and overall ambiance of a living space by adding elements of style, design, and sophistication.</p>
-        <div onClick={() => setBooking(true)}>
-          <Button value='Book free consultation' color='#fff' />
-        </div>
+          <div onClick={() => setBooking(true)}>
+            <Button value='Book free consultation' color='#fff' />
+          </div>
       </div>
     </div>
   )

@@ -15,6 +15,7 @@ import { useContext } from 'react'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '@/Components/Footer'
 import Booking from '@/Components/Booking'
+import ContactUs from '@/Components/Home/Contact Us'
 
 
 export default function Home() {
@@ -42,6 +43,7 @@ export default function Home() {
         <Index {...download} />
         <Partners />
         <Testimonials />
+        <ContactUs />
         <Footer />
       </>
     </>

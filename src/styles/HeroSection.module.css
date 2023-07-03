@@ -34,6 +34,11 @@
     text-align: center;
 }
 
+.ButtonContainer {
+    display: flex;
+    gap: 1rem;
+}
+
 @media screen and (max-width: 750px) {
     .content h1{
         font-size: 38px;
