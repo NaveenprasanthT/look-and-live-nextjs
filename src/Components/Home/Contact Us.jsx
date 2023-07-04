@@ -3,7 +3,6 @@ import styles from '@/styles/ContactUs.module.css'
 import { BsTelephoneFill } from 'react-icons/bs'
 import { GrMail } from 'react-icons/gr'
 import Image from 'next/image'
-import img from '../../../public/assets/ContactUs/contactimg1.png'
 
 const ContactUs = () => {
 
