@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styles from '@/styles/WhyUs.module.css'
 import Image from 'next/image';
 import { BookingContext } from '@/Context';
+import Button from '../Button';
 
 const WhyUs = () => {
     const { setBooking } = useContext(BookingContext);
@@ -77,7 +78,9 @@ const WhyUs = () => {
                     ))
                 }
             </div>
-            <button className={styles.aboutUsBtn} onClick={() => setBooking(true)}>Book Free Consultation</button>
+            <div onClick={() => setBooking(true)} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+            <Button value='Book free consultation' color='#fff' />
+            </div>
             <div className={styles.warranty}>
                 {
                     data.map((item, key) => (

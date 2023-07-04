@@ -18,6 +18,7 @@ export const Title = styled.div`
     font-weight: 500;
     font-size: 35px;
     display: ${({ topTitle }) => (topTitle ? 'none' : 'block')};
+    text-align: left;
     @media screen and (max-width: 1000px){
         font-size: 22px;
         margin-top: 10px;
@@ -75,7 +76,7 @@ export const Right = styled.div`
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
     gap: 10%;
     padding-left: 0;

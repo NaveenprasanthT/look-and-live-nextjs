@@ -3,29 +3,30 @@ import styles from '@/styles/ContactUs.module.css'
 import { BsTelephoneFill } from 'react-icons/bs'
 import { GrMail } from 'react-icons/gr'
 import Image from 'next/image'
+import img from '../../../public/assets/ContactUs/contactimg1.png'
 
 const ContactUs = () => {
 
     const cities = [
         {
             name: 'Pune',
-            img: '/assets/ContactUs/contactimg1.png',
+            img: require('../../../public/assets/ContactUs/contactimg1.png'),
         },
         {
             name: 'Chennai',
-            img: '/assets/ContactUs/contactimg2.png',
+            img: require('../../../public/assets/ContactUs/contactimg2.png'),
         },
         {
             name: 'Mysore',
-            img: '/assets/ContactUs/contactimg3.png',
+            img: require('../../../public/assets/ContactUs/contactimg3.png'),
         },
         {
             name: 'Hyderabad',
-            img: '/assets/ContactUs/contactimg4.png',
+            img: require('../../../public/assets/ContactUs/contactimg4.png'),
         },
         {
             name: 'Kolkata',
-            img: '/assets/ContactUs/contactimg5.png',
+            img: require('../../../public/assets/ContactUs/contactimg5.png'),
         },
     ]
 
@@ -53,6 +54,7 @@ const ContactUs = () => {
                     </div>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.850017709486!2d77.6421349742329!3d12.917359587393033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1571554566a9%3A0x8b2d3278751d1631!2sCharge%20Infra%20-HSR!5e0!3m2!1sen!2sin!4v1688390347040!5m2!1sen!2sin" style={{ border: 'none', borderRadius: '8px', }} width="98%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+                <div style={{width:'100%'}}>
                 <h4>accessible cities</h4>
                 <div className={styles.cityContainer}>
                     {
@@ -63,6 +65,7 @@ const ContactUs = () => {
                             </div>
                         ))
                     }
+                </div>
                 </div>
             </div>
         </div>
