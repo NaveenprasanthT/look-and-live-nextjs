@@ -9,23 +9,23 @@ const ContactUs = () => {
     const cities = [
         {
             name: 'Pune',
-            img: require('../../../public/assets/ContactUs/contactimg1.png'),
+            img: require('../../../public/Assets/ContactUs/contactimg1.png'),
         },
         {
             name: 'Chennai',
-            img: require('../../../public/assets/ContactUs/contactimg2.png'),
+            img: require('../../../public/Assets/ContactUs/contactimg2.png'),
         },
         {
             name: 'Mysore',
-            img: require('../../../public/assets/ContactUs/contactimg3.png'),
+            img: require('../../../public/Assets/ContactUs/contactimg3.png'),
         },
         {
             name: 'Hyderabad',
-            img: require('../../../public/assets/ContactUs/contactimg4.png'),
+            img: require('../../../public/Assets/ContactUs/contactimg4.png'),
         },
         {
             name: 'Kolkata',
-            img: require('../../../public/assets/ContactUs/contactimg5.png'),
+            img: require('../../../public/Assets/ContactUs/contactimg5.png'),
         },
     ]
 
