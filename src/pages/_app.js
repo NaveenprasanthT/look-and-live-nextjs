@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
 
           <Component {...pageProps} />
 
-          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PNJZLVFQMM"></Script>
+          <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-PNJZLVFQMM"></Script>
           <Script>
             {`
               window.dataLayer = window.dataLayer || [];
