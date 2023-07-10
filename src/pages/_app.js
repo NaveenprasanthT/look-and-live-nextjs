@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import { useState } from 'react'
 import { DownloadContext, QuizContext, BookingContext } from '../../src/Context'
+import Script from 'next/script'
 
 export default function App({ Component, pageProps }) {
 
@@ -54,11 +55,22 @@ export default function App({ Component, pageProps }) {
       <BookingContext.Provider value={{ booking, setBooking }}>
 
         <QuizContext.Provider value={{
-          currentQ, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13,name, email, phoneno, propertyName,
+          currentQ, Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8, Q9, Q10, Q11, Q12, Q13, name, email, phoneno, propertyName,
           setCurrentQ, setQ1, setQ2, setQ3, setQ4, setQ5, setQ6, setQ7, setQ8, setQ9, setQ10, setQ11, setQ12, setQ13, setName, setPhoneno, setEmail, setPropertyName,
         }}>
 
           <Component {...pageProps} />
+
+          <Script async src="https://www.googletagmanager.com/gtag/js?id=G-PNJZLVFQMM"></Script>
+          <Script>
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-PNJZLVFQMM');
+            `}
+          </Script>
 
         </QuizContext.Provider>
       </BookingContext.Provider>
