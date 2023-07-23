@@ -125,7 +125,7 @@
         opacity: 1;
     }
 
-    .content button {
+    .content Button{
         font-size: 12px;
         padding: 4%;
     }
@@ -143,5 +143,8 @@
     .cards {
         grid-template-columns: 1fr 1fr ;
         gap: .3rem;
+    }
+    .content Button{
+        display: none;
     }
 }
